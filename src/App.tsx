@@ -183,7 +183,7 @@ function App() {
                 </div>
 
                 <a
-                  href="adventurous-victory-production-0363.up.railway.app"
+                  href="https://adventurous-victory-production-0363.up.railway.app"
                   target="_blank"
                   rel="noreferrer"
                   className="project-link"
