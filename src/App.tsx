@@ -183,12 +183,12 @@ function App() {
                 </div>
 
                 <a
-                  href="https://github.com/"
+                  href="adventurous-victory-production-0363.up.railway.app"
                   target="_blank"
                   rel="noreferrer"
                   className="project-link"
                 >
-                  View on GitHub ↗
+                  Open Live App ↗
                 </a>
               </article>
 
