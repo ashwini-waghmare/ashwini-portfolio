@@ -696,3 +696,75 @@ footer .logo {
     padding: 65px 7%;
   }
 }
+
+
+.job-contact {
+  max-width: 650px;
+  margin: 55px auto 0;
+  padding: 32px;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #f0dce3;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px #bd7b8d15;
+}
+
+.job-contact h3 {
+  margin: 12px 0;
+  color: #382b35;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+}
+
+.job-contact > p:not(.section-label) {
+  color: #786b75;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.job-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.job-form label {
+  display: grid;
+  gap: 8px;
+  color: #493744;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.job-form input,
+.job-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #e8cbd5;
+  border-radius: 8px;
+  background: #fffaf8;
+  color: #382b35;
+  font: inherit;
+}
+
+.job-form input:focus,
+.job-form textarea:focus {
+  outline: 2px solid #c76b8a;
+  outline-offset: 1px;
+}
+
+.job-form textarea {
+  resize: vertical;
+}
+
+.job-form button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (max-width: 480px) {
+  .job-contact {
+    padding: 22px 17px;
+  }
+}

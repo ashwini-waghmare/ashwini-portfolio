@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import "./App.css";
 
 function App() {
@@ -293,6 +294,95 @@ function App() {
                 <strong>Connect with me ↗</strong>
               </span>
             </a>
+          </div>
+
+          <div className="job-contact">
+            <p className="section-label">JOB OPPORTUNITIES</p>
+            <h3>Have an opportunity for me?</h3>
+            <p>
+              Share the details with me. I'd love to hear about relevant roles
+              and opportunities.
+            </p>
+
+            <form
+              className="job-form"
+              onSubmit={async (event) => {
+                event.preventDefault();
+
+                const form = event.currentTarget;
+                const formData = new FormData(form);
+
+                const templateParams = {
+                  from_name: String(formData.get("name") || ""),
+                  company: String(formData.get("company") || ""),
+                  reply_to: String(formData.get("email") || ""),
+                  message: String(formData.get("message") || ""),
+                };
+
+                try {
+                  await emailjs.send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                    templateParams,
+                    {
+                      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+                    },
+                  );
+
+                  alert("Job enquiry sent successfully!");
+                  form.reset();
+                } catch (error) {
+                  console.error("EmailJS error:", error);
+                  alert(
+                    "Email could not be sent. Please check your EmailJS settings.",
+                  );
+                }
+              }}
+            >
+              <label>
+                Your Name
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Recruiter's name"
+                  required
+                />
+              </label>
+
+              <label>
+                Company Name
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                  required
+                />
+              </label>
+
+              <label>
+                Your Email
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="recruiter@company.com"
+                  required
+                />
+              </label>
+
+              <label>
+                Opportunity Details
+                <textarea
+                  name="message"
+                  placeholder="Tell me about the job opportunity..."
+                  rows={4}
+                  required
+                />
+              </label>
+
+              <button type="submit" className="primary-btn">
+                Send Job Enquiry ↗
+              </button>
+            </form>
           </div>
         </section>
       </main>
